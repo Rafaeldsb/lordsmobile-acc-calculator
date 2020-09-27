@@ -1,0 +1,30 @@
+<div class="grid-container" [formGroup]="form">
+  <h1 class="mat-h1">Acceleration Calculator</h1>
+  <mat-accordion multi >
+    <mat-expansion-panel *ngFor="let accGroup of accGroups">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ accGroup.label }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field *ngFor="let acc of accGroup.accs"  style="margin-left: 10px; max-width: 25%;">
+        <mat-label>{{ acc.label }}</mat-label>
+        <input matInput [formControlName]="acc.id" type="number" min="0" step="1" max="999999">
+      </mat-form-field>
+  
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-card style="margin-top: 20px;">
+    <mat-card-header>
+      <mat-card-title>TOTAL</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngFor="let accGroup of accGroups">
+        <span>{{accGroup.label}}: </span>
+        <span>{{formatTime(accGroup.type)}}</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
