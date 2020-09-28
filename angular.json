@@ -25,6 +25,7 @@
             "aot": true,
             "assets": [
               "src/robots.txt",
+              "src/init.js",
               "src/favicon.ico",
               "src/assets"
             ],
@@ -91,6 +92,7 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/robots.txt",
+              "src/init.js",
               "src/favicon.ico",
               "src/assets"
             ],
